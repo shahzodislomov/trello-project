@@ -30,7 +30,6 @@ function MonthlyTasks() {
       query: day.format("MM"),
     });
   }
-  console.log(daysOfMonth);
 
   const handleAddTask = () => {
     if (newTask.trim()) {

@@ -23,7 +23,6 @@ const OtpAuth = () => {
 			);
 			localStorage.setItem('token', response.data.access_token);
 
-			console.log(response);
 			setMessage(response.data.message);
 
 			if (

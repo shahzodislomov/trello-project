@@ -10,6 +10,14 @@ const OneDayMonth = () => {
 		setTasks(data.filter((x) => x.due_date.slice(5, 7) == day));
 	}, [day]);
 
+	const deleteTask = (task) => {
+		const all = JSON.parse(localStorage.getItem('tasks'));
+		const filter = all.filter((x) => x.id !== task.id);
+		localStorage.removeItem('tasks');
+		localStorage.setItem('tasks', JSON.stringify([...filter]));
+		window.location.reload();
+	};
+
 	return (
 		<div className='mt-10 px-4 sm:px-8'>
 			<div className='max-w-full lg:max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-6'>
@@ -20,10 +28,16 @@ const OneDayMonth = () => {
 						<p>No tasks available for this day.</p>
 					) : (
 						tasks.map((task) => (
-							<div key={task.id} className='bg-gray-100 p-4 rounded-lg'>
+							<div key={task.id} className='bg-gray-100 p-4 rounded-lg flex flex-col'>
 								<h3 className='text-xl font-semibold'>{task.text}</h3>
 								<p>{task.description}</p>
 								<span className='text-sm text-gray-500'>{`Due: ${task.due_date}`}</span>
+								<button
+									onClick={() => deleteTask(task)}
+									className='self-end bg-red-500 text-white px-4 py-2 rounded mt-2 hover:bg-red-600'
+								>
+									Delete
+								</button>
 							</div>
 						))
 					)}
