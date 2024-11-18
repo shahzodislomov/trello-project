@@ -155,6 +155,14 @@ function WeeklyTasks() {
 														Done
 													</button>
 												)}
+												{status !== "todo" && (
+                          <button
+                            onClick={() => handleChangeStatus(task.id, "todo")}
+                            className="block text-left px-4 py-2 w-full hover:bg-gray-100 text-orange-700 font-semibold"
+                          >
+                            todo
+                          </button>
+                        )}
 												<button
 													onClick={() => handleDeleteTask(task.id)}
 													className='block text-left px-4 py-2 w-full hover:bg-gray-100 text-red-500 font-semibold'
