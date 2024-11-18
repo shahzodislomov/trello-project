@@ -126,13 +126,17 @@ function SignUp() {
 							className='w-full px-4 py-2 border border-gray-300 rounded outline-none focus:ring-2 focus:ring-blue-500'
 						/>
 					</div>
-
+					<div className='flex flex-col text-center'>
 					<button
 						type='submit'
 						className='bg-black text-white w-full sm:w-auto px-8 py-2 rounded hover:bg-gray-700'
-					>
+						>
 						Sign-up
 					</button>
+					<Link to={"/signin"}>
+					<button className='text-blue-600'>already have an account?</button>
+					</Link>
+						</div>
 				</form>
 
 				{message && <p className='mt-4 text-red-500'>{message}</p>}
