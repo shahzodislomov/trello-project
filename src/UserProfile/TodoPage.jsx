@@ -7,6 +7,9 @@ import WeeklyTasks from '../DailyTasks/WeeklyTasks';
 import MonthlyTasks from '../DailyTasks/MonthlyTasks';
 import AddSpecialDay from '../DailyTasks/AddSpecialDay';
 import { useSelector } from 'react-redux';
+import OneDay from '../DailyTasks/OneDay';
+import OneDayMonth from '../DailyTasks/OneDayMonth';
+import OneDaySpecial from '../DailyTasks/OneDaySpecial';
 
 function TodoPage() {
 	const [specialDays, setSpeicalDays] = useState([]);
@@ -124,6 +127,9 @@ function TodoPage() {
 							<Route path='today' element={<TodayTasks />} />
 							<Route path='weekly' element={<WeeklyTasks />} />
 							<Route path='monthly' element={<MonthlyTasks />} />
+							<Route path='weekly/:day' element={<OneDay />} />
+							<Route path='/:day' element={<OneDaySpecial />} />
+							<Route path='/monthly/:day' element={<OneDayMonth />} />
 						</Routes>
 					</div>
 				</div>

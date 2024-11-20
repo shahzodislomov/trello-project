@@ -18,9 +18,6 @@ const App = () => {
 				<Route path='/signup' element={<SignUp />} />
 				<Route path='/todo/*' element={<TodoPage />} />
 				<Route path='/otp' element={<OtpAuth />} />
-				<Route path='/todo/weekly/:day' element={<OneDay />} />
-				<Route path='/todos/:day' element={<OneDaySpecial />} />
-				<Route path='/todo/monthly/:day' element={<OneDayMonth />} />
 			</Routes>
 		</div>
 	);

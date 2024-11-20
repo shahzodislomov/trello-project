@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-const OneDay = () => {
+const OneDaySpecial = () => {
 	const { day } = useParams();
 	const [tasks, setTasks] = useState([]);
 
@@ -47,4 +47,4 @@ const OneDay = () => {
 	);
 };
 
-export default OneDay;
+export default OneDaySpecial;
